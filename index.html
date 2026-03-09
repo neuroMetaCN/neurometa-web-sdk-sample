@@ -3,11 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeuroMeta Web Demo</title>
-  <meta name="description" content="NeuroMeta EEG Sensor Web 演示应用" />
+  <title>NeuroMeta Web Demo (ES5)</title>
+  <meta name="description" content="NeuroMeta EEG Sensor Web 演示应用 — ES5 兼容版" />
+  <link rel="stylesheet" href="src/styles/index.css" />
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+  <div id="root" class="app">
+    <!-- 顶部标题区域 -->
+    <div class="header">
+      <div class="clock" id="clock">--:--</div>
+      <h1>NEUROMETA</h1>
+      <h2>EEG DATA ACQUISITION SDK</h2>
+    </div>
+
+    <!-- 状态卡片区域 -->
+    <div class="status-cards">
+      <div class="status-card">
+        <div class="status-label">BATTERY</div>
+        <div class="status-value" id="battery">--</div>
+      </div>
+      <div class="status-card">
+        <div class="status-label">STATUS</div>
+        <div class="status-value small" id="wearStatus">--</div>
+      </div>
+    </div>
+
+    <!-- 设备列表区域 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title">DEVICES</div>
+        <div class="section-badge" id="deviceCount">0 FOUND</div>
+      </div>
+      <button class="btn btn-primary" id="connectBtn" onclick="handleConnect()">SCAN DEVICES</button>
+    </div>
+
+    <!-- 实时 EEG 区域 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title">REALTIME EEG</div>
+        <div class="text-green" id="sampleRate" style="font-size:12px;letter-spacing:0.05em">-- Hz LIVE</div>
+      </div>
+      <div class="channel-info">CH1 · FP1</div>
+      <canvas id="waveform" width="600" height="200" class="waveform-canvas"></canvas>
+    </div>
+
+    <!-- 控制台日志区域 -->
+    <div class="section" style="margin-bottom:16px">
+      <div class="section-header">
+        <div class="section-title">CONSOLE LOG</div>
+        <button class="clear-btn" onclick="clearLogs()">CLEAR</button>
+      </div>
+      <div class="console-log" id="consoleLog"></div>
+    </div>
+
+    <!-- Record EDF -->
+    <button class="btn btn-record" id="recordBtn" onclick="toggleRecording()" disabled>Record EDF</button>
+    <div class="text-green" id="recordInfo" style="font-size:12px;text-align:center;display:none"></div>
+  </div>
+
+  <!-- SDK IIFE bundle (全局变量 NeuroMetaSDKBundle) -->
+  <script src="vendor/neurometa-web-sdk/dist/index.global.js"></script>
+  <!-- ES5 应用逻辑 -->
+  <script src="src/app.js"></script>
 </body>
 </html>

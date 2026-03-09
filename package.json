@@ -1,28 +1,10 @@
 {
-  "name": "neurometa-web-demo",
+  "name": "neurometa-web-demo-es5",
   "private": true,
   "version": "1.0.0",
-  "type": "module",
+  "description": "NeuroMeta Web SDK Demo (ES5 兼容版)",
   "scripts": {
-    "prepare:wasm": "node ./scripts/prepare-wasm.mjs",
-    "predev": "npm run prepare:wasm",
-    "prebuild": "npm run prepare:wasm",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@neurometa/web-sdk": "file:./vendor/neurometa-web-sdk",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.3.0",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.2.0",
-    "typescript": "^5.4.0",
-    "vite": "^5.2.0",
-    "vite-plugin-top-level-await": "^1.6.0",
-    "vite-plugin-wasm": "^3.5.0"
+    "dev": "npx -y serve . -p 5173",
+    "start": "npx -y serve . -p 5173"
   }
 }
