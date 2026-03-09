@@ -1025,7 +1025,10 @@ var _NeuroMetaSDK = class _NeuroMetaSDK {
     let wasmModule2;
     try {
       wasmModule2 = await Promise.resolve().then(() => (init_neurometa_core(), neurometa_core_exports));
-      await wasmModule2.default();
+      const initFn = typeof wasmModule2.default === "function" ? wasmModule2.default : typeof wasmModule2.init === "function" ? wasmModule2.init : null;
+      if (initFn) {
+        await initFn();
+      }
     } catch (err) {
       throw new SDKError(
         1e3 /* INIT_FAILED */,

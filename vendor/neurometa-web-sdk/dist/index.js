@@ -366,7 +366,10 @@ var _NeuroMetaSDK = class _NeuroMetaSDK {
     let wasmModule;
     try {
       wasmModule = await import("./neurometa_core-CZ35GMZJ.js");
-      await wasmModule.default();
+      const initFn = typeof wasmModule.default === "function" ? wasmModule.default : typeof wasmModule.init === "function" ? wasmModule.init : null;
+      if (initFn) {
+        await initFn();
+      }
     } catch (err) {
       throw new SDKError(
         1e3 /* INIT_FAILED */,
