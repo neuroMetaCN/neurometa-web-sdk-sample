@@ -1,0 +1,38 @@
+{
+  "name": "@neurometa/web-sdk",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "NeuroMeta EEG SDK for Web (WASM + Web Bluetooth)",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "core/pkg"
+  ],
+  "scripts": {
+    "build:wasm": "cd core && wasm-pack build --target web --release",
+    "build:ts": "tsup src/index.ts --format esm,cjs --dts",
+    "build": "npm run build:ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "tsup": "^8.0.0",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "eventemitter3": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

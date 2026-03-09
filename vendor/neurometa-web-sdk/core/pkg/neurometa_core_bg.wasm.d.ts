@@ -1,0 +1,32 @@
+/* tslint:disable */
+/* eslint-disable */
+export const memory: WebAssembly.Memory;
+export const __wbg_neurometacore_free: (a: number, b: number) => void;
+export const neurometacore_add_filtered_samples: (a: number, b: number, c: number) => number;
+export const neurometacore_apply_all_filters: (a: number, b: number, c: number, d: number) => void;
+export const neurometacore_apply_bandpass: (a: number, b: number, c: number, d: number) => void;
+export const neurometacore_apply_notch: (a: number, b: number, c: number, d: number) => void;
+export const neurometacore_create_dev_license: (a: number, b: number, c: number) => void;
+export const neurometacore_feed_edf: (a: number, b: number, c: number) => void;
+export const neurometacore_flush_filtered: (a: number) => number;
+export const neurometacore_get_amplitude: (a: number, b: number) => number;
+export const neurometacore_get_data_char_uuid: (a: number, b: number) => void;
+export const neurometacore_get_preset_char_uuid: (a: number, b: number) => void;
+export const neurometacore_get_rms: (a: number, b: number) => number;
+export const neurometacore_get_service_uuid: (a: number, b: number) => void;
+export const neurometacore_get_start_command: (a: number, b: number) => void;
+export const neurometacore_is_recording_edf: (a: number) => number;
+export const neurometacore_new: () => number;
+export const neurometacore_parse_raw_data: (a: number, b: number, c: number) => number;
+export const neurometacore_reset_filtered: (a: number) => void;
+export const neurometacore_reset_parser: (a: number) => void;
+export const neurometacore_set_allow_dev_license: (a: number, b: number) => void;
+export const neurometacore_set_filter_config: (a: number, b: number, c: number) => void;
+export const neurometacore_start_edf: (a: number, b: number, c: number, d: number, e: number) => void;
+export const neurometacore_stop_edf: (a: number, b: number) => void;
+export const neurometacore_validate_license: (a: number, b: number, c: number, d: number, e: number) => number;
+export const version: (a: number) => void;
+export const __wbindgen_export: (a: number, b: number) => number;
+export const __wbindgen_add_to_stack_pointer: (a: number) => number;
+export const __wbindgen_export2: (a: number, b: number, c: number) => void;
+export const __wbindgen_export3: (a: number, b: number, c: number, d: number) => number;

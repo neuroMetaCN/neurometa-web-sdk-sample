@@ -1,0 +1,16 @@
+{
+  "name": "neurometa-core",
+  "type": "module",
+  "description": "NeuroMeta EEG SDK Core — WASM module",
+  "version": "1.0.0",
+  "files": [
+    "neurometa_core_bg.wasm",
+    "neurometa_core.js",
+    "neurometa_core.d.ts"
+  ],
+  "main": "neurometa_core.js",
+  "types": "neurometa_core.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
